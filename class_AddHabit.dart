@@ -1,17 +1,38 @@
-class AddHabit {
-  final String name;
-  final String motivation;
+// Habit hinzufügen
+class Habit {
+  String name;
+  String motivation;
 
-  AddHabit({required this.name, required this.motivation});
+  Habit({required this.name, required this.motivation});
+
+  void setName(String newName) {
+    name = newName;
+  }
 }
 
+// Übersicht
 class Overview {
-  final List<String> currentWeek;
-  final String monthProgress;
-  final bool isMonthSucceed;
+  List<String> currentWeek;
+  String monthProgress;
+  bool isMonthSucceed;
 
   Overview(
       {required this.currentWeek,
       required this.monthProgress,
       required this.isMonthSucceed});
+}
+
+// Anmeldung User
+class User {
+  String email;
+  String _password;
+  String? _eingabePassword;
+
+  User(this.email, this._password);
+
+// Methode Passwort checken
+
+  bool isPasswordCorrect() {
+    return _eingabePassword == _password;
+  }
 }
